@@ -1,0 +1,30 @@
+{
+  "name": "tokenauthwith",
+  "version": "1.0.0",
+  "description": "ract groupe auth",
+  "main": "app.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node app.js",
+    "server": "nodemon app.js",
+    "client": "npm run start --prefix client",
+    "client:install": "npm install --prefix client",
+    "client:build": "npm run build --prefix client",
+    "dev": "cross-env NODE_ENV=development concurrently \"npm run server\" \"npm run client\""
+  },
+  "keywords": [
+    "auth"
+  ],
+  "author": "bolbotandrii@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "concurrently": "^7.5.0",
+    "config": "^3.3.8",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.7.2",
+    "nodemon": "^2.0.20"
+  }
+}
