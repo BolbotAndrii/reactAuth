@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Checkbox, Form, Input } from 'antd'
+import { Button, Form, Input } from 'antd'
 
 
 
@@ -24,7 +24,9 @@ const Login = () => {
             }}
             onFinish={onFinish}
             onFinishFailed={onFinishFailed}
+            id='login-form'
             autoComplete="off"
+            className='w-80 rounded border-2 p-8'
         >
             <Form.Item
                 label="Username"
@@ -52,16 +54,7 @@ const Login = () => {
                 <Input.Password />
             </Form.Item>
 
-            <Form.Item
-                name="remember"
-                valuePropName="checked"
-                wrapperCol={{
-                    offset: 8,
-                    span: 16,
-                }}
-            >
-                <Checkbox>Remember me</Checkbox>
-            </Form.Item>
+
 
             <Form.Item
                 wrapperCol={{

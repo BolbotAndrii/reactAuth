@@ -1,11 +1,14 @@
 import React from 'react'
-import Login from "../components/LoginForm/Login";
+import Login from "../components/LoginForm/Login"
+import LoginLayout from "../layouts/LoginLayout/LoginLayout"
 
 
 const LoginPage = () => {
     return (
 
-        <Login />
+        <LoginLayout >
+            <Login />
+        </LoginLayout>
 
     )
 }
