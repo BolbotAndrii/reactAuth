@@ -11,7 +11,7 @@ const MainLayout = ({children}) => {
             <Layout>
                 <Header>Header</Header>
                 <Content className='p-8'>{children}</Content>
-                <Footer>Footer</Footer>
+                <Footer>&copy; Andrii Bolbot</Footer>
             </Layout>
         </Layout>
 

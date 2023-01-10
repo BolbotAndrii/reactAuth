@@ -1,11 +1,27 @@
 import React from 'react'
 import { Button, Form, Input } from 'antd'
+import {loginUser} from "../../utils/api"
 
 
+
+
+const login = () => {
+    loginUser().then( (data) => {
+        console.log(data)
+
+    }).catch ( (e) => {
+        console.error(e.message)
+    })
+}
 
 const Login = () => {
     const onFinish = (values) => {
-        console.log('Success:', values);
+        loginUser(values).then( (response) => {
+            console.log(response)
+
+        }).catch ( (e) => {
+            console.error(e.message)
+        })
     };
     const onFinishFailed = (errorInfo) => {
         console.log('Failed:', errorInfo);
@@ -26,7 +42,7 @@ const Login = () => {
             onFinishFailed={onFinishFailed}
             id='login-form'
             autoComplete="off"
-            className='w-80 rounded border-2 p-8'
+            className='w-80 rounded p-8 bg-zinc-900 shadow'
         >
             <Form.Item
                 label="Username"
@@ -62,7 +78,7 @@ const Login = () => {
                     span: 16,
                 }}
             >
-                <Button type="primary" htmlType="submit">
+                <Button type="primary" htmlType="submit" onSubmit={() => login()}>
                     Submit
                 </Button>
             </Form.Item>

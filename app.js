@@ -12,9 +12,15 @@ app.use(cors())
 app.use(express.urlencoded({extended: true}))
 app.use(bodyParser.json())
 
-
 // port
 const PORT = config.get('port') || 6000
+
+
+//routes
+
+app.use( '/api/auth', require('./routes/auth.routes'))
+app.use( '/api/user', require('./routes/user.routes'))
+
 
 const startServer = async () => {
     try {
